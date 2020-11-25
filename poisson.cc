@@ -11,7 +11,7 @@ double poisson(double mu, int k) {
 int main() {
     using namespace std;
 
-    vector<int> zaehler(10);
+    vector<int> zaehler(11);
 
     ifstream fin("datensumme.txt");
     int n_i;
