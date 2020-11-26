@@ -68,10 +68,12 @@ int main() {
     for (double mu = 1 ; mu < 5 ; mu += step_size) {
       foutdlog  << mu << " " << -2 * log(prob(daten, mu)) - double_log_l_min << endl;
       double llratio = -2 * log(abs(prob(daten, mu)/ prob(daten, 3.11538)));
+
       if (llratio < 4 && found_lower_mu2 == 0) {
         lower_mu2 = mu;
         found_lower_mu2 = 1;
       }
+
       if (llratio < 1 && found_lower_mu == 0) {
         lower_mu = mu;
         found_lower_mu = 1;
@@ -96,6 +98,9 @@ int main() {
     double lambda = prob(daten, 3.11538)/prob_normaliser(daten);
     cout << "Lambda: " << lambda << ", -2ln(Lambda): -2*log(lambda)" << endl;
     cout << (-2*log(lambda)-233) / (sqrt(2*233)) << endl;
+    }
+    foutdlog.close();
+    cout << lower_mu << " < mu < " << upper_mu << endl;
 
 }
 
