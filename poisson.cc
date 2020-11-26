@@ -32,7 +32,7 @@ int main() {
 
     ofstream foutpoi("histpoi.txt");
     for (int i = 0 ; i < zaehler.size() ; i++) {
-      double eofpoi = total_n * poisson(i, 3.11538);
+      double eofpoi = total_n * poisson(3.11538, i);
       foutpoi << i << " " << zaehler[i] << " " << eofpoi << endl;
     }
 
