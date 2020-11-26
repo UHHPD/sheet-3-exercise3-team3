@@ -93,14 +93,13 @@ int main() {
     cout << lower_mu << " < mu < " << upper_mu << " for 68 %" << endl;
     cout << "Uncertainty of sample mean: 1.65365/sqrt(234)" << endl;
     cout << lower_mu2 << " < mu < " << upper_mu2 << " for 95 %" << endl;
+    cout << "Uncertainty of sample mean: 1.65365/sqrt(234) = 0.1083" << endl;
+    cout << "Uncertainty of mean: " << (upper_mu - lower_mu)/2 << endl;
 
     // e)
     double lambda = prob(daten, 3.11538)/prob_normaliser(daten);
-    cout << "Lambda: " << lambda << ", -2ln(Lambda): -2*log(lambda)" << endl;
+    cout << "Lambda: " << lambda << ", -2ln(Lambda): " << -2*log(lambda) << endl;
     cout << (-2*log(lambda)-233) / (sqrt(2*233)) << endl;
-    }
-    foutdlog.close();
-    cout << lower_mu << " < mu < " << upper_mu << endl;
 
 }
 
